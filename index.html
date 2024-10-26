@@ -9,36 +9,54 @@
     <h1 id="status">Loading scripts...</h1>
 
     <script>
-        // Arrays for the different script sources
-        var nunsourdaultozyScripts = [
+        // Arrays for the nunsourdaultozy IDs
+        var nunsourdaultozyIds = [
+            8420834,  // Keep this fixed as it is
+            8420837,
             8420832,
+            8420829,
             8420827
         ];
         
-        var thubanoaScripts = [
-            8420822,
+        // Arrays for the thubanoa IDs
+        var thubanoaIds = [
+            8420826,
             8420825,
-            8420824
+            8420824,
+            8420823,
+            8420822
         ];
 
-        // Function to load a script dynamically
-        function loadScript(domain, id) {
+        // Function to load the specific script format
+        function loadNunsourdaultozyScript(id) {
             var script = document.createElement('script');
-            script.src = 'https://' + domain + '/1?z=' + id;
-            script.async = true;
-            script.setAttribute('data-cfasync', 'false');
+            script.src = 'https://nunsourdaultozy.net/400/' + id;
             (document.body || document.documentElement).appendChild(script);
         }
 
-        // Randomly select and load one script from each source
-        var randomNunsourdaultozyId = nunsourdaultozyScripts[Math.floor(Math.random() * nunsourdaultozyScripts.length)];
-        loadScript('nunsourdaultozy.net', randomNunsourdaultozyId);
+        // Load the fixed ad script
+        loadNunsourdaultozyScript(8420834);
 
-        var randomThubanoaId = thubanoaScripts[Math.floor(Math.random() * thubanoaScripts.length)];
-        loadScript('thubanoa.com', randomThubanoaId);
+        // Randomly select and load one other nunsourdaultozy script
+        var randomNunsourdaultozyId = nunsourdaultozyIds[Math.floor(Math.random() * nunsourdaultozyIds.length)];
+        loadNunsourdaultozyScript(randomNunsourdaultozyId);
+
+        // Function to load the thubanoa scripts
+        function loadThubanoaScript(id) {
+            var script = document.createElement('script');
+            script.async = true;
+            script.setAttribute('data-cfasync', 'false');
+            script.src = '//thubanoa.com/1?z=' + id;
+            (document.body || document.documentElement).appendChild(script);
+        }
+
+        // Randomly select and load one thubanoa script
+        var randomThubanoaId = thubanoaIds[Math.floor(Math.random() * thubanoaIds.length)];
+        loadThubanoaScript(randomThubanoaId);
 
         // Update the h1 element to show the loaded IDs
-        document.getElementById('status').innerText = `Loaded IDs: nunsourdaultozy.net - ${randomNunsourdaultozyId}, thubanoa.com - ${randomThubanoaId}`;
+        document.getElementById('status').innerText = `Loaded IDs: nunsourdaultozy.net - ${randomNunsourdaultozyId} (fixed: 8420834), thubanoa.com - ${randomThubanoaId}`;
     </script>
+Updated V1.0
 </body>
 </html>
