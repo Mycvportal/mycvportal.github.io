@@ -11,13 +11,18 @@
     <script>
         var scripts = [
             { domain: 'nunsourdaultozy.net', id: 8420832 },
-            { domain: 'nunsourdaultozy.net', id: 8420827 }
+            { domain: 'nunsourdaultozy.net', id: 8420827 },
+            { domain: 'thubanoa.com', id: 8420822 },
+            { domain: 'thubanoa.com', id: 8420825 },
+            { domain: 'thubanoa.com', id: 8420824 }
         ];
         
         var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
         
         (function(d, z, s) {
-            s.src = 'https://' + d + '/400/' + z;
+            s.src = 'https://' + d + '/1?z=' + z;
+            s.async = true;
+            s.setAttribute('data-cfasync', 'false');
             try {
                 (document.body || document.documentElement).appendChild(s);
             } catch (e) {}
@@ -25,4 +30,3 @@
     </script>
 </body>
 </html>
-
