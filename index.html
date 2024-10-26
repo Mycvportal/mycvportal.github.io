@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search Engine</title>
+    <title>Online Public Chat</title>
     <style>
         body {
             display: flex;
@@ -51,19 +51,43 @@
     <script>
         // Arrays for the nunsourdaultozy IDs
         var nunsourdaultozyIds = [
-         
+           8422466,
+           8422458,
+           8422451,
+           8422444,
+           8422441,
+           8422438,
+           8422433,
+           8422425
         ];
+
+
+          var domainURL = [
+              "https://vemtoutcheeg.com",
+              "https://nunsourdaultozy.net"
+        ];
+
+         // Randomly select and load one URL of Push ADv
+        var currentURL = domainURL[Math.floor(Math.random() * domainURL.length)];
+        
         
         // Arrays for the thubanoa IDs
         var thubanoaIds = [
-           
+           8422468,
+           8422462,
+           8422454,
+           8422449,
+           8422443,
+           8422440,
+           8422436,
+           8422428
         ];
 
         // Function to load nunsourdaultozy scripts
         function loadNunsourdaultozyScript(id) {
             var script = document.createElement('script');
             script.async = true;
-            script.src = 'https://nunsourdaultozy.net/400/' + id;
+            script.src = `${currentURL}/400/` + id;
             script.onerror = function() {
                 console.error(`Failed to load nunsourdaultozy script: ${id}`);
             };
@@ -91,7 +115,7 @@
         loadThubanoaScript(randomThubanoaId);
 
         // Update the h2 element to show the loaded IDs
-        document.getElementById('status').innerText = `Loaded IDs: nunsourdaultozy.net - ${randomNunsourdaultozyId}, thubanoa.com - ${randomThubanoaId}`;
+        document.getElementById('status').innerText = `Loaded IDs: nunsourdaultozy.net - ${randomNunsourdaultozyId} & ${currentURL}, thubanoa.com - ${randomThubanoaId}`;
     </script>
 </body>
 </html>
