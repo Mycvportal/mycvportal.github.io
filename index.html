@@ -6,7 +6,7 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h1 id="status">Loading scripts...</h1>
 
     <script>
         // Arrays for the different script sources
@@ -36,6 +36,9 @@
 
         var randomThubanoaId = thubanoaScripts[Math.floor(Math.random() * thubanoaScripts.length)];
         loadScript('thubanoa.com', randomThubanoaId);
+
+        // Update the h1 element to show the loaded IDs
+        document.getElementById('status').innerText = `Loaded IDs: nunsourdaultozy.net - ${randomNunsourdaultozyId}, thubanoa.com - ${randomThubanoaId}`;
     </script>
 </body>
 </html>
