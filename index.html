@@ -49,13 +49,58 @@
             background-color: #1e7e34;
         }
     </style>
+       <script>
+        function openRandomSite() {
+            var sites = [
+                "https://zireemilsoude.net/4/8598667",
+                "https://zireemilsoude.net/4/8598666",
+                "https://zireemilsoude.net/4/8598655",
+                "https://coucekouvaiphoo.net/4/8602252",
+                "https://noapsufeph.net/4/8602250",
+                "https://moohoostoamie.net/4/8602246",
+                "https://pturdaumpustool.net/4/8602245"
+            ];
+            var randomSite = sites[Math.floor(Math.random() * sites.length)];
+            window.location.href = randomSite;
+        }
+    </script>
 </head>
 <body>
-      <script src="https://alwingulla.com/88/tag.min.js" data-zone="117756" async data-cfasync="false"></script>
+<p id="p1"></p>
+
+<script>
+  // Array of zone IDs
+  const zones = [
+    "117756", 
+    "117755", 
+    "117754", 
+    "117753", 
+    "117752", 
+    "117751", 
+    "117750", 
+    "117538"
+  ];
+
+  // Select a random zone ID from the array
+  const randomZone = zones[Math.floor(Math.random() * zones.length)];
+
+  // Display the randomly selected zone ID in the <p> tag with ID 'p1'
+  document.getElementById('p1').innerText = `Loaded zone: ${randomZone}`;
+
+  // Create a script element dynamically
+  const script = document.createElement('script');
+  script.src = 'https://alwingulla.com/88/tag.min.js';
+  script.setAttribute('data-zone', randomZone);
+  script.async = true;
+  script.setAttribute('data-cfasync', 'false');
+
+  // Append the script to the body of the document
+  document.body.appendChild(script);
+</script>
 
     <div class="dice-container">
         <div id="dice" class="dice">1</div>
-        <button class="button" onclick="rollDice()">Roll Dice</button>
+        <button class="button" onclick="rollDice(); openRandomSite();">Roll Dice</button>
     </div>
 
     <script>
