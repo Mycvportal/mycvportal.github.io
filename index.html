@@ -51,31 +51,7 @@
     </style>
 </head>
 <body>
-        <script>
-        // Define an array of data-zone IDs
- const zoneIds = [
-                 "117756", 
-                 "117755", 
-                 "117754", 
-                 "117753", 
-                 "117752", 
-                 "117751", 
-                 "117750", 
-                 "117538"]
-
-        
-        // Randomly select a zone ID from the array
-        const randomZoneId = zoneIds[Math.floor(Math.random() * zoneIds.length)];
-        console.log("Loaded ad zone: " + randomZoneId);
-        const zoneMessage = document.getElementById('zone-message');
-        zoneMessage.textContent = "The selected ad zone is: " + randomZoneId;
-        const adScript = document.createElement('script');
-        adScript.src = 'https://alwingulla.com/88/tag.min.js';
-        adScript.setAttribute('data-zone', randomZoneId);
-        adScript.setAttribute('async', 'true');
-        adScript.setAttribute('data-cfasync', 'false');
-        document.body.appendChild(adScript);
-    </script>
+      <script src="https://alwingulla.com/88/tag.min.js" data-zone="117756" async data-cfasync="false"></script>
 
     <div class="dice-container">
         <div id="dice" class="dice">1</div>
